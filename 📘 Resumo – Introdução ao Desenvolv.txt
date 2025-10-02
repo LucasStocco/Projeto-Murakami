@@ -1,0 +1,143 @@
+📘 Resumo – Introdução ao Desenvolvimento de Sistemas Web
+🔹 Unidade 1 – Introdução ao Desenvolvimento de Sistemas Web
+Tópico 1 – Internet
+
+Origens: nasceu com a ARPANET (anos 1960), projeto militar dos EUA → base do TCP/IP (Robert Kahn e Vint Cerf).
+
+E-mail (1972) foi a primeira aplicação.
+
+WWW (1989 – Tim Berners-Lee): sistema de hipertexto acessado via navegador.
+
+No Brasil: chegou em 1988 em universidades; uso comercial só em 1994 (Embratel).
+
+Funcionamento:
+
+TCP/IP → garante a comunicação entre redes diferentes.
+
+DNS (Domain Name System) → traduz nomes de sites em IPs.
+
+HTTP → protocolo que permite a navegação na web.
+
+Tópico 2 – Desenvolvimento para Web
+
+HTML → estrutura e conteúdo.
+
+XHTML → versão mais rigorosa do HTML (baseada em XML).
+
+CSS → estilo e layout.
+
+JavaScript e Web APIs → interação e dinamismo.
+
+Padrões Web (W3C) → garantem acessibilidade, usabilidade e compatibilidade entre navegadores.
+
+Acessibilidade → uso adequado de alt em imagens, contraste, navegação por teclado etc.
+
+Web Móvel → design responsivo para celulares/tablets.
+
+Browsers → Chrome, Firefox, Safari, Edge, Opera etc.
+
+Tópico 3 – Ferramentas e Linguagens
+
+Ferramentas de edição:
+
+Notepad++, NetBeans, Dreamweaver, Aptana, Komodo, MS Expression Web .
+
+Linguagens server-side:
+
+ASP, PHP (1995, Rasmus Lerdorf, scripts dinâmicos lado servidor), JSP (Java Server Pages).
+
+Linguagens client-side: HTML, CSS, JavaScript .
+
+Servidores Web: Apache, IIS .
+
+🔹 Unidade 2 – HTML (HyperText Markup Language)
+Fundamentos
+
+Estrutura: <!DOCTYPE>, <html>, <head>, <body>.
+
+Elementos básicos: títulos (<h1>-<h6>), parágrafos (<p>), links (<a>), imagens (<img>).
+
+Comentários: <!-- ... -->.
+
+Formatação
+
+Quebras de linha: <br>.
+
+Estilos inline (ex: <p style="color:red;">).
+
+Negrito (<b>, <strong>), itálico (<i>, <em>), sublinhado (<u>).
+
+Listas: ordenadas <ol>, não ordenadas <ul>, de definição <dl>.
+
+Tabelas: <table>, <tr>, <td>, <th>.
+
+Formulários: <form>, <input>, <textarea>, <select>, <button>.
+
+Tornando a página interativa
+
+Links com <a href="">.
+
+Frames (hoje obsoletos).
+
+Formulários para interação usuário-servidor.
+
+Listas e tabelas para organização de dados .
+
+🔹 Unidade 3 – CSS e JavaScript
+CSS (Cascading Style Sheets)
+
+Função: separar conteúdo (HTML) de apresentação (estilo).
+
+Estrutura: seletor { propriedade: valor; }.
+
+Formas de uso:
+
+Externa: arquivo .css linkado no <head>.
+
+Interna: dentro de <style>.
+
+Inline: no próprio elemento HTML.
+
+Principais propriedades:
+
+Texto: color, font-family, font-size, text-align, text-decoration.
+
+Fundo: background-color, background-image, background-repeat, background-position .
+
+Listas e tabelas podem ter estilos personalizados.
+
+JavaScript
+
+Função: dar comportamento às páginas (eventos, validações, interatividade).
+
+Características:
+
+Linguagem client-side (executada no navegador).
+
+Declarada entre <script> ... </script>.
+
+Manipula elementos HTML e CSS via DOM.
+
+Conceitos básicos:
+
+Variáveis: var, let, const.
+
+Eventos: onclick, onmouseover.
+
+Estruturas de controle: if, else, for, while .
+
+📌 Pontos-chave para sua prova
+
+Internet: origem (ARPANET), protocolos (TCP/IP, HTTP), DNS, chegada ao Brasil.
+
+HTML: estrutura básica, tags principais, listas, tabelas, formulários.
+
+CSS: seletor, propriedade e valor; diferenças entre inline, interna e externa; principais propriedades (texto, fundo, listas).
+
+JavaScript: dinamismo, variáveis, eventos, estruturas de controle.
+
+Ferramentas: editores (Notepad++, NetBeans, Dreamweaver), servidores (Apache, IIS).
+
+Padrões Web (W3C): usabilidade, acessibilidade, responsividade.
+
+Linguagens server-side: ASP, PHP, JSP.

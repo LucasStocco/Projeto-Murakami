@@ -1,0 +1,288 @@
+📘 Resumo – Introdução ao Desenvolvimento de Sistemas Web
+🔹 Unidade 1 – Introdução ao Desenvolvimento de Sistemas Web
+Tópico 1 – Internet
+
+Origens: nasceu com a ARPANET (anos 1960), projeto militar dos EUA → base do TCP/IP (Robert Kahn e Vint Cerf).
+
+E-mail (1972) foi a primeira aplicação.
+
+WWW (1989 – Tim Berners-Lee): sistema de hipertexto acessado via navegador.
+
+No Brasil: chegou em 1988 em universidades; uso comercial só em 1994 (Embratel).
+
+Funcionamento:
+
+TCP/IP → garante a comunicação entre redes diferentes.
+
+DNS (Domain Name System) → traduz nomes de sites em IPs.
+
+HTTP → protocolo que permite a navegação na web.
+
+Tópico 2 – Desenvolvimento para Web
+
+HTML → estrutura e conteúdo.
+
+XHTML → versão mais rigorosa do HTML (baseada em XML).
+
+CSS → estilo e layout.
+
+JavaScript e Web APIs → interação e dinamismo.
+
+Padrões Web (W3C) → garantem acessibilidade, usabilidade e compatibilidade entre navegadores.
+
+Acessibilidade → uso adequado de alt em imagens, contraste, navegação por teclado etc.
+
+Web Móvel → design responsivo para celulares/tablets.
+
+Browsers → Chrome, Firefox, Safari, Edge, Opera etc.
+
+Tópico 3 – Ferramentas e Linguagens
+
+Ferramentas de edição:
+
+Notepad++, NetBeans, Dreamweaver, Aptana, Komodo, MS Expression Web .
+
+Linguagens server-side:
+
+ASP, PHP (1995, Rasmus Lerdorf, scripts dinâmicos lado servidor), JSP (Java Server Pages).
+
+Linguagens client-side: HTML, CSS, JavaScript .
+
+Servidores Web: Apache, IIS .
+
+🔹 Unidade 2 – HTML (HyperText Markup Language)
+Fundamentos
+
+Estrutura: <!DOCTYPE>, <html>, <head>, <body>.
+
+Elementos básicos: títulos (<h1>-<h6>), parágrafos (<p>), links (<a>), imagens (<img>).
+
+Comentários: <!-- ... -->.
+
+Formatação
+
+Quebras de linha: <br>.
+
+Estilos inline (ex: <p style="color:red;">).
+
+Negrito (<b>, <strong>), itálico (<i>, <em>), sublinhado (<u>).
+
+Listas: ordenadas <ol>, não ordenadas <ul>, de definição <dl>.
+
+Tabelas: <table>, <tr>, <td>, <th>.
+
+Formulários: <form>, <input>, <textarea>, <select>, <button>.
+
+Tornando a página interativa
+
+Links com <a href="">.
+
+Frames (hoje obsoletos).
+
+Formulários para interação usuário-servidor.
+
+Listas e tabelas para organização de dados .
+
+🔹 Unidade 3 – CSS e JavaScript
+CSS (Cascading Style Sheets)
+
+Função: separar conteúdo (HTML) de apresentação (estilo).
+
+Estrutura: seletor { propriedade: valor; }.
+
+Formas de uso:
+
+Externa: arquivo .css linkado no <head>.
+
+Interna: dentro de <style>.
+
+Inline: no próprio elemento HTML.
+
+Principais propriedades:
+
+Texto: color, font-family, font-size, text-align, text-decoration.
+
+Fundo: background-color, background-image, background-repeat, background-position .
+
+Listas e tabelas podem ter estilos personalizados.
+
+JavaScript
+
+Função: dar comportamento às páginas (eventos, validações, interatividade).
+
+Características:
+
+Linguagem client-side (executada no navegador).
+
+Declarada entre <script> ... </script>.
+
+Manipula elementos HTML e CSS via DOM.
+
+Conceitos básicos:
+
+Variáveis: var, let, const.
+
+Eventos: onclick, onmouseover.
+
+Estruturas de controle: if, else, for, while .
+
+📌 Pontos-chave para sua prova
+
+Internet: origem (ARPANET), protocolos (TCP/IP, HTTP), DNS, chegada ao Brasil.
+
+HTML: estrutura básica, tags principais, listas, tabelas, formulários.
+
+CSS: seletor, propriedade e valor; diferenças entre inline, interna e externa; principais propriedades (texto, fundo, listas).
+
+JavaScript: dinamismo, variáveis, eventos, estruturas de controle.
+
+Ferramentas: editores (Notepad++, NetBeans, Dreamweaver), servidores (Apache, IIS).
+
+Padrões Web (W3C): usabilidade, acessibilidade, responsividade.
+
+Linguagens server-side: ASP, PHP, JSP.
+
+👉 Quer que eu prepare também um quadro-resumo visual (tipo ficha de revisão/cola organizada em tópicos) para você usar direto na prova com consulta?
+
+Você disse:
+Livro java-ee-7-com-jsf-primefaces-e-cdi-2a-edicao-20150228.pdf
+PDF
+faça com esse livro agora
+O ChatGPT disse:
+
+Li o livro Java EE 7 com JSF, PrimeFaces e CDI – 2ª Edição (2015) que você enviou e organizei um resumo completo com os conceitos e ideias mais importantes para sua prova com consulta.
+
+📘 Resumo – Java EE 7 com JSF, PrimeFaces e CDI
+🔹 Capítulo 1 – Introdução ao Java EE
+
+Java EE (Enterprise Edition) → plataforma para desenvolvimento de aplicações corporativas.
+
+Diferença Java SE vs Java EE:
+
+SE: recursos básicos (linguagem, collections, IO).
+
+EE: APIs adicionais para sistemas distribuídos, transações, segurança.
+
+APIs do Java EE 7:
+
+JSF (JavaServer Faces) → construção de interfaces web com componentes.
+
+CDI (Contexts and Dependency Injection) → gerencia dependências e ciclo de vida dos beans.
+
+JPA (Java Persistence API) → mapeamento objeto-relacional.
+
+EJB (Enterprise Java Beans) → lógica de negócios distribuída.
+
+JAX-RS → criação de serviços REST.
+
+🔹 Capítulo 2 – JSF (JavaServer Faces)
+
+Framework MVC para web.
+
+Baseado em componentes reutilizáveis.
+
+Ciclo de vida do JSF (importante para provas):
+
+Restore View
+
+Apply Request Values
+
+Process Validations
+
+Update Model Values
+
+Invoke Application
+
+Render Response
+
+Managed Beans → classes Java controlando a lógica.
+
+Navegação → controlada por faces-config.xml ou anotações.
+
+Validação e conversão → tags <h:inputText>, <h:message>, validadores padrões ou customizados.
+
+🔹 Capítulo 3 – PrimeFaces
+
+Biblioteca de componentes JSF avançados.
+
+Facilita a criação de UI moderna e responsiva.
+
+Exemplos de componentes:
+
+DataTable → tabelas ricas com paginação, filtros, ordenação.
+
+Dialog → janelas modais.
+
+Charts → gráficos interativos.
+
+Menus, calendários, upload de arquivos, botões com ícones.
+
+Tema → personalização com PrimeFaces Theme.
+
+Ajax integrado → chamadas assíncronas com pouco código.
+
+🔹 Capítulo 4 – CDI (Contexts and Dependency Injection)
+
+Gerenciamento de dependências → substitui new com injeção automática.
+
+Escopos:
+
+@RequestScoped → dura apenas uma requisição.
+
+@SessionScoped → dura a sessão do usuário.
+
+@ApplicationScoped → compartilhado em toda a aplicação.
+
+@Dependent → escopo padrão, dependente de quem o consome.
+
+Qualificadores (@Qualifier) → diferenciar implementações.
+
+Produtores (@Produces) → criam objetos customizados para injeção.
+
+Interceptors e Decorators → adicionar comportamento sem mudar a lógica principal.
+
+🔹 Capítulo 5 – JPA e Integração
+
+ORM (Object-Relational Mapping) → entidades Java representando tabelas.
+
+Anotações principais:
+
+@Entity, @Id, @GeneratedValue.
+
+Relacionamentos: @OneToOne, @OneToMany, @ManyToMany.
+
+JPQL (Java Persistence Query Language) → consultas orientadas a objetos.
+
+EntityManager → responsável por persistência e transações.
+
+Integração com JSF/PrimeFaces para exibir dados.
+
+🔹 Capítulo 6 – Segurança e Boas Práticas
+
+Autenticação e autorização → controle de acesso em aplicações corporativas.
+
+JAAS (Java Authentication and Authorization Service).
+
+Boas práticas:
+
+Separação de camadas (UI, negócios, persistência).
+
+Reutilização de componentes JSF/PrimeFaces.
+
+CDI para reduzir acoplamento.
+
+Validação no servidor e no cliente.
+
+📌 Pontos-chave para prova
+
+Java EE 7 → conjunto de APIs (JSF, CDI, JPA, EJB, JAX-RS).
+
+JSF → ciclo de vida em 6 fases; uso de Managed Beans; navegação com faces-config.
+
+PrimeFaces → componentes prontos (DataTable, Dialog, Charts), Ajax integrado.
+
+CDI → escopos (@RequestScoped, @SessionScoped etc.), injeção de dependências, interceptors.
+
+JPA → mapeamento objeto-relacional (@Entity, relacionamentos), consultas com JPQL.
+
+Segurança → autenticação, autorização, boas práticas de arquitetura.

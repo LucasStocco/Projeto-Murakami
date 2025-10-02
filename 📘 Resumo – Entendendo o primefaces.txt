@@ -1,0 +1,286 @@
+📘 Resumo – Dominando JPA e Hibernate (Algaworks – 2ª Edição)
+🔹 Capítulo 1 – Introdução ao JPA
+
+JPA (Java Persistence API) → especificação Java para persistência de dados.
+
+Implementações comuns: Hibernate, EclipseLink, OpenJPA.
+
+Objetivo: reduzir uso de SQL “na mão”, permitindo trabalhar com objetos Java mapeados em tabelas.
+
+ORM (Object-Relational Mapping) → cada entidade Java representa uma tabela, cada atributo corresponde a uma coluna.
+
+🔹 Capítulo 2 – Entidades
+
+Entidade = classe Java anotada com @Entity.
+
+Deve ter:
+
+Construtor sem argumentos.
+
+Identificador único (@Id).
+
+Chaves primárias:
+
+@GeneratedValue → geração automática (IDENTITY, SEQUENCE, TABLE, AUTO).
+
+Mapeamento de atributos:
+
+@Column, @Temporal, @Enumerated, @Lob.
+
+Tipos incorporáveis: @Embeddable e @Embedded.
+
+🔹 Capítulo 3 – Relacionamentos
+
+Tipos:
+
+@OneToOne → 1 para 1.
+
+@OneToMany e @ManyToOne → 1 para N.
+
+@ManyToMany → N para N.
+
+Cascading: cascade = CascadeType.ALL (propaga operações).
+
+Fetch types:
+
+EAGER → carrega sempre.
+
+LAZY → carrega sob demanda (recomendado para performance).
+
+JoinColumn → personalizar chave estrangeira.
+
+MappedBy → indica o lado inverso do relacionamento.
+
+🔹 Capítulo 4 – Ciclo de Vida das Entidades
+
+Estados de uma entidade:
+
+Transient → objeto novo, não gerenciado.
+
+Managed → sob controle do EntityManager.
+
+Detached → já foi gerenciado, mas saiu do contexto.
+
+Removed → marcado para exclusão.
+
+Métodos principais do EntityManager:
+
+persist(), merge(), remove(), find(), getReference(), flush(), clear().
+
+🔹 Capítulo 5 – Consultas com JPQL
+
+JPQL (Java Persistence Query Language) → linguagem orientada a entidades, não a tabelas.
+
+Sintaxe semelhante ao SQL, mas usa nomes de classes e atributos.
+
+Exemplo:
+
+SELECT c FROM Cliente c WHERE c.nome = :nome
+
+
+Named Queries: consultas pré-definidas com @NamedQuery.
+
+Parâmetros:
+
+Nomeados (:nome) ou posicionais (?1).
+
+Funções: COUNT, MAX, MIN, AVG, SUM.
+
+Join: JOIN, LEFT JOIN FETCH.
+
+🔹 Capítulo 6 – Transações
+
+EntityManager trabalha dentro de uma transação.
+
+Em ambientes Java EE, normalmente controladas por contêiner.
+
+Em aplicações standalone, usar:
+
+EntityTransaction tx = em.getTransaction();
+tx.begin();
+// operações
+tx.commit();
+
+🔹 Capítulo 7 – Boas Práticas
+
+Usar LAZY para coleções grandes.
+
+Evitar consultas N+1 (usar JOIN FETCH).
+
+Organizar queries em Named Queries.
+
+Centralizar operações de persistência em DAO/Repository.
+
+Fechar sempre o EntityManager.
+
+Usar DTOs para transportar dados entre camadas.
+
+📌 Pontos-chave para a prova
+
+JPA = especificação; Hibernate é implementação.
+
+Entidades → @Entity, @Id, @GeneratedValue, @Column.
+
+Relacionamentos → @OneToOne, @OneToMany, @ManyToMany, cascade, fetch.
+
+Ciclo de vida → Transient, Managed, Detached, Removed.
+
+EntityManager → persist(), merge(), remove(), find().
+
+JPQL → orientada a objetos (Cliente em vez de tabela).
+
+Transações → begin(), commit().
+
+Boas práticas → LAZY, evitar N+1, usar DTOs, Named Queries.
+
+👉 Quer que eu prepare também um quadro-resumo em tabela/fluxo visual (tipo ficha de revisão rápida) com as anotações desse livro, como fiz para os outros?
+
+Você disse:
+faça um resumo sobre o primefaces, para um iniciante mesmo, de como usar, como implementar etc
+O ChatGPT disse:
+
+Beleza 🚀 Vou montar um guia para iniciantes em PrimeFaces, bem direto, como se fosse uma cola prática para você entender e já começar a usar.
+
+📘 PrimeFaces – Guia para Iniciantes
+🔹 O que é PrimeFaces?
+
+É uma biblioteca de componentes JSF (JavaServer Faces).
+
+Fornece componentes prontos e ricos (tabelas, gráficos, menus, botões, calendários etc.).
+
+Facilita o desenvolvimento de interfaces modernas e responsivas em Java EE/Jakarta EE.
+
+Tem integração com AJAX nativa (interações sem recarregar a página).
+
+🔹 Estrutura Básica de Uso
+
+Adicionar a dependência (Maven):
+
+<dependency>
+    <groupId>org.primefaces</groupId>
+    <artifactId>primefaces</artifactId>
+    <version>12.0.0</version> <!-- ou versão mais atual -->
+</dependency>
+
+
+Declarar o namespace no XHTML:
+
+xmlns:p="http://primefaces.org/ui"
+
+
+Criar página XHTML com componentes:
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Exemplo PrimeFaces</title>
+</h:head>
+<h:body>
+    <h:form>
+        <p:inputText value="#{meuBean.nome}" placeholder="Digite seu nome"/>
+        <p:commandButton value="Enviar" action="#{meuBean.enviar}" update="@form"/>
+    </h:form>
+</h:body>
+</html>
+
+🔹 Principais Componentes para Começar
+
+Botões e Inputs
+
+<p:inputText value="#{bean.texto}" placeholder="Digite algo"/>
+<p:password value="#{bean.senha}" feedback="true"/>
+<p:commandButton value="Salvar" action="#{bean.salvar}" update="@form"/>
+
+
+Mensagens
+
+<p:messages autoUpdate="true"/>
+
+
+Tabelas (DataTable)
+
+<p:dataTable value="#{bean.lista}" var="item">
+    <p:column headerText="ID">#{item.id}</p:column>
+    <p:column headerText="Nome">#{item.nome}</p:column>
+</p:dataTable>
+
+
+Calendário
+
+<p:calendar value="#{bean.data}" dateFormat="dd/MM/yyyy"/>
+
+
+Caixas de Diálogo (Modal)
+
+<p:dialog header="Exemplo" widgetVar="dlg">
+    <h:outputText value="Conteúdo da janela"/>
+</p:dialog>
+
+<p:commandButton value="Abrir" onclick="PF('dlg').show()" type="button"/>
+
+🔹 AJAX com PrimeFaces
+
+O <p:commandButton> já faz requisição AJAX por padrão.
+
+update="@form" → atualiza o formulário inteiro.
+
+update="idComponente" → atualiza apenas aquele componente.
+
+Exemplo:
+
+<p:commandButton value="Buscar" action="#{bean.buscar}" update="resultado"/>
+<p:outputLabel id="resultado" value="#{bean.mensagem}"/>
+
+🔹 Temas e Estilos
+
+PrimeFaces já vem com temas prontos.
+
+Para usar:
+
+<context-param>
+    <param-name>primefaces.THEME</param-name>
+    <param-value>saga</param-value>
+</context-param>
+
+
+Temas disponíveis: saga, vela, arya, nova-light, entre outros.
+
+🔹 Ciclo Básico de Desenvolvimento
+
+Criar Bean CDI/ManagedBean com atributos e métodos.
+
+@Named
+@RequestScoped
+public class MeuBean {
+    private String nome;
+    public void enviar() {
+        System.out.println("Nome enviado: " + nome);
+    }
+    // getters e setters
+}
+
+
+Criar página XHTML usando componentes <p:...>.
+
+Configurar ações do Bean no atributo action.
+
+Usar update para atualizar a tela dinamicamente.
+
+🔹 Vantagens do PrimeFaces
+
+✅ Componentes prontos → não precisa reinventar a roda.
+✅ Integração com AJAX sem muito código.
+✅ Fácil personalização via temas.
+✅ Bom para iniciantes em JSF.
+
+📌 Resumindo:
+
+PrimeFaces é só uma biblioteca de componentes JSF.
+
+Para usar → adicionar dependência, configurar namespace e começar a usar <p:componentes>.
+
+Principais para começar: InputText, CommandButton, Messages, DataTable, Dialog.
+
+Sempre ligado a ManagedBeans/CDI Beans que controlam a lógica.

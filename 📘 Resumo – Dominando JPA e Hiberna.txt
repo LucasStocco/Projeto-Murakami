@@ -1,0 +1,134 @@
+📘 Resumo – Dominando JPA e Hibernate (Algaworks – 2ª Edição)
+🔹 Capítulo 1 – Introdução ao JPA
+
+JPA (Java Persistence API) → especificação Java para persistência de dados.
+
+Implementações comuns: Hibernate, EclipseLink, OpenJPA.
+
+Objetivo: reduzir uso de SQL “na mão”, permitindo trabalhar com objetos Java mapeados em tabelas.
+
+ORM (Object-Relational Mapping) → cada entidade Java representa uma tabela, cada atributo corresponde a uma coluna.
+
+🔹 Capítulo 2 – Entidades
+
+Entidade = classe Java anotada com @Entity.
+
+Deve ter:
+
+Construtor sem argumentos.
+
+Identificador único (@Id).
+
+Chaves primárias:
+
+@GeneratedValue → geração automática (IDENTITY, SEQUENCE, TABLE, AUTO).
+
+Mapeamento de atributos:
+
+@Column, @Temporal, @Enumerated, @Lob.
+
+Tipos incorporáveis: @Embeddable e @Embedded.
+
+🔹 Capítulo 3 – Relacionamentos
+
+Tipos:
+
+@OneToOne → 1 para 1.
+
+@OneToMany e @ManyToOne → 1 para N.
+
+@ManyToMany → N para N.
+
+Cascading: cascade = CascadeType.ALL (propaga operações).
+
+Fetch types:
+
+EAGER → carrega sempre.
+
+LAZY → carrega sob demanda (recomendado para performance).
+
+JoinColumn → personalizar chave estrangeira.
+
+MappedBy → indica o lado inverso do relacionamento.
+
+🔹 Capítulo 4 – Ciclo de Vida das Entidades
+
+Estados de uma entidade:
+
+Transient → objeto novo, não gerenciado.
+
+Managed → sob controle do EntityManager.
+
+Detached → já foi gerenciado, mas saiu do contexto.
+
+Removed → marcado para exclusão.
+
+Métodos principais do EntityManager:
+
+persist(), merge(), remove(), find(), getReference(), flush(), clear().
+
+🔹 Capítulo 5 – Consultas com JPQL
+
+JPQL (Java Persistence Query Language) → linguagem orientada a entidades, não a tabelas.
+
+Sintaxe semelhante ao SQL, mas usa nomes de classes e atributos.
+
+Exemplo:
+
+SELECT c FROM Cliente c WHERE c.nome = :nome
+
+
+Named Queries: consultas pré-definidas com @NamedQuery.
+
+Parâmetros:
+
+Nomeados (:nome) ou posicionais (?1).
+
+Funções: COUNT, MAX, MIN, AVG, SUM.
+
+Join: JOIN, LEFT JOIN FETCH.
+
+🔹 Capítulo 6 – Transações
+
+EntityManager trabalha dentro de uma transação.
+
+Em ambientes Java EE, normalmente controladas por contêiner.
+
+Em aplicações standalone, usar:
+
+EntityTransaction tx = em.getTransaction();
+tx.begin();
+// operações
+tx.commit();
+
+🔹 Capítulo 7 – Boas Práticas
+
+Usar LAZY para coleções grandes.
+
+Evitar consultas N+1 (usar JOIN FETCH).
+
+Organizar queries em Named Queries.
+
+Centralizar operações de persistência em DAO/Repository.
+
+Fechar sempre o EntityManager.
+
+Usar DTOs para transportar dados entre camadas.
+
+📌 Pontos-chave para a prova
+
+JPA = especificação; Hibernate é implementação.
+
+Entidades → @Entity, @Id, @GeneratedValue, @Column.
+
+Relacionamentos → @OneToOne, @OneToMany, @ManyToMany, cascade, fetch.
+
+Ciclo de vida → Transient, Managed, Detached, Removed.
+
+EntityManager → persist(), merge(), remove(), find().
+
+JPQL → orientada a objetos (Cliente em vez de tabela).
+
+Transações → begin(), commit().
+
+Boas práticas → LAZY, evitar N+1, usar DTOs, Named Queries.
